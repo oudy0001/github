@@ -1,0 +1,24 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin columnWidthCalculator($containerWidth, $colNum, $padding, $margin, $border){
+    width: ($containerWidth - (2 * $padding + 2 * $margin + 2 * $border) * $colNum) / $colNum;
+    padding: $padding;
+    margin: $margin;
+    //overflow: scroll;
+}
+@mixin wrapperCalc($colNum, $colWidth, $colPadding, $colMargin, $colBorder){
+    width: ($colNum * ($colWidth + (2 * $colPadding) + (2 * $colMargin) + (2 * $colBorder)));
+}
+@mixin rotate($degree, $animateTime){
+    transition: all $animateTime linear;
+    -ms-transform: rotate($degree);
+    -webkit-transform: rotate($degree);
+    -moz-transform: rotate($degree);
+    transform: rotate($degree);
+}
